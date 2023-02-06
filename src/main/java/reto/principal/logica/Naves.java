@@ -7,21 +7,20 @@ public abstract class Naves {
     private int numNave;
     private String nombre;
     private String tipo;
-    private String proposito;
-    
+    private String tripulada;
+    private int tamaño;
     public abstract void objetivo();
     public abstract void despegue();
 
     public Naves() {
     }
-    
-    
 
-    public Naves(int numNave, String nombre, String tipo, String proposito) {
+    public Naves(int numNave, String nombre, String tipo, String tripulada, int tamaño) {
         this.numNave = numNave;
         this.nombre = nombre;
         this.tipo = tipo;
-        this.proposito = proposito;
+        this.tripulada = tripulada;
+        this.tamaño = tamaño;
     }
 
     public int getNumNave() {
@@ -48,13 +47,22 @@ public abstract class Naves {
         this.tipo = tipo;
     }
 
-    public String getProposito() {
-        return proposito;
+    public String getTripulada() {
+        return tripulada;
     }
 
-    public void setProposito(String proposito) {
-        this.proposito = proposito;
+    public void setTripulada(String tripulada) {
+        this.tripulada = tripulada;
     }
+
+    public int getTamaño() {
+        return tamaño;
+    }
+
+    public void setTamaño(int tamaño) {
+        this.tamaño = tamaño;
+    }
+
     
     
     
