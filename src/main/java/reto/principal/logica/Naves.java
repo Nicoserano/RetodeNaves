@@ -1,16 +1,29 @@
 
 package reto.principal.logica;
 
+import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
-public abstract class Naves {
+@Entity
+public abstract class Naves implements Serializable {
     
+    public abstract void objetivo();
+    
+    public abstract void despegue();
+    
+    @Id
+    @GeneratedValue(strategy=GenerationType.SEQUENCE)
     private int numNave;
+    
     private String nombre;
     private String tipo;
     private String tripulada;
     private int tamaño;
-    public abstract void objetivo();
-    public abstract void despegue();
+    
+    
 
     public Naves() {
     }

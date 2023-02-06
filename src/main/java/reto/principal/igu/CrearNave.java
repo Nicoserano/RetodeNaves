@@ -1,10 +1,12 @@
 
 package reto.principal.igu;
 
+import reto.principal.logica.Controladora;
+
 
 public class CrearNave extends javax.swing.JFrame {
 
-    
+    Controladora control = new Controladora();
     public CrearNave() {
         initComponents();
     }
@@ -106,6 +108,11 @@ public class CrearNave extends javax.swing.JFrame {
         );
 
         btnGuardar.setText("Guardar");
+        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarActionPerformed(evt);
+            }
+        });
 
         btnLimpiar.setText("Limpiar");
         btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
@@ -191,6 +198,15 @@ public class CrearNave extends javax.swing.JFrame {
         cmbTipo.setSelectedIndex(0);
         cmbTripulada.setSelectedIndex(0);
     }//GEN-LAST:event_btnLimpiarActionPerformed
+
+    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
+        
+        String nombre = txtNombre.getText();
+        String tipo =  (String) cmbTipo.getSelectedItem();
+        String tripulada = (String) cmbTripulada.getSelectedItem();
+        int tamaño = Integer.parseInt(txtTamaño.getText());
+        control.agregar(nombre,tipo,tripulada,tamaño);
+    }//GEN-LAST:event_btnGuardarActionPerformed
 
     
 
